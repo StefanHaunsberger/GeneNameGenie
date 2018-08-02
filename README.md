@@ -7,3 +7,4 @@ and associated UniProt IDs, without having to know that Bcl-2 is a gene symbol a
 features miRNA name conversion for 22 different miRBase release versions from 271 different species, and includes
 miRNA metadata for the current miRBase version 22.
 
+Current documentation (temporary): <a href="https://stefanhaunsberger.github.io/GeneNameGenie/" target="_blank">slate-markdown</a>
