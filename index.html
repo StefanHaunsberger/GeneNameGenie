@@ -1,0 +1,853 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>GeneNameGenie Doc</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all.js"></script>
+  </head>
+
+  <body class="index" data-languages="[&quot;shell&quot;,&quot;r&quot;,&quot;julia&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo.png" class="logo" alt="Logo" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="shell">Cypher</a>
+              <a href="#" data-language-name="r">R</a>
+              <a href="#" data-language-name="julia">Julia</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#data-content" class="toc-h1 toc-link" data-title="Data content">Data content</a>
+          </li>
+          <li>
+            <a href="#let-39-s-get-started" class="toc-h1 toc-link" data-title="Let's get started">Let's get started</a>
+          </li>
+          <li>
+            <a href="#establish-connection" class="toc-h1 toc-link" data-title="Establish connection">Establish connection</a>
+          </li>
+          <li>
+            <a href="#molecular-id-handling" class="toc-h1 toc-link" data-title="Molecular-ID handling">Molecular-ID handling</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-current-official-gene-symbol-getofficialgenesymbol" class="toc-h2 toc-link" data-title="Get current official gene symbol - getOfficialGeneSymbol">Get current official gene symbol - <code>getOfficialGeneSymbol</code></a>
+                  </li>
+                  <li>
+                    <a href="#convert-any-molecular-input-id-to-47-different-types" class="toc-h2 toc-link" data-title="Convert any molecular input ID to 47 different types">Convert any molecular input ID to 47 different types</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#mirna-id-handling" class="toc-h1 toc-link" data-title="miRNA ID handling">miRNA ID handling</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#translate-mirna-input-ids-to-current-version-and-retrieve-metadata" class="toc-h2 toc-link" data-title="Translate miRNA input Ids to current version and retrieve metadata">Translate miRNA input Ids to current version and retrieve metadata</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#list-valid-databases-and-supported-parameter-values" class="toc-h1 toc-link" data-title="List valid databases and supported parameter values">List valid databases and supported parameter values</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#getvaliddatabases-list-all-supported-dbs" class="toc-h2 toc-link" data-title="getValidDatabases: List all supported DBs"><code>getValidDatabases</code>: List all supported DBs</a>
+                  </li>
+                  <li>
+                    <a href="#getvalidmirnametadatavalues-list-all-valid-mirna-metadata-parameter-values" class="toc-h2 toc-link" data-title="getValidMirnaMetadataValues: List all valid miRNA metadata parameter values"><code>getValidMirnaMetadataValues</code>: List all valid miRNA metadata parameter values</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><a href='#'>Sign Up for a Developer Key</a></li>
+            <li><a href='https://github.com/lord/slate' target="_blank">Documentation Powered by Slate</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1>
+<p>Welcome to the <em>GeneNameGenie</em> documentation. </p>
+
+<p>GeneNameGenie is a Neo4j graph database (GDB) which represents 47 different
+molecular identifier types, such as official gene symbols, Ensembl IDs,
+NCBI RefSeq IDs and UniProt IDs as well as their relationships in a most
+flexible and visually approachable way.</p>
+
+<p>This guide aims to show you how to investigate/translate molecular IDs in GeneNameGenie
+using the Neo4j web browser console, R and Julia.</p>
+
+<p><a href="https://github.com/StefanHaunsberger/GeneNameGenieR" target="_blank">GeneNameGenieR</a> for the R and
+<a href="https://github.com/StefanHaunsberger/GeneNameGenieJ" target="_blank">GeneNameGenieJ</a> for the Julia
+programming language.</p>
+<h1 id='data-content'>Data content</h1>
+<p>The GeneNameGenie graph database (GDB) includes the following DBs:</p>
+
+<ul>
+<li>Human Ensembl (molecular IDs, chromosomal locations and more)
+-&gt; <a href="http://www.ensembl.org/index.html" target="_blank">Ensembl</a></li>
+<li>A full instance of the Reactome GDB
+-&gt; <a href="https://reactome.org/dev/graph-database" target="_blank">Reactome GDB</a></li>
+<li>miRNA identifiers from 22 different miRBase release versions
+-&gt; <a href="http://mirbase.org" target="_blank">miRBase</a></li>
+<li>miRNA metadata from miRBase version 22.</li>
+</ul>
+
+<p>This example API documentation page was created with <a href="https://github.com/lord/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&#39;s documentation.</p>
+<h1 id='let-39-s-get-started'>Let&#39;s get started</h1>
+<blockquote>
+<p>To load the package use the following code:</p>
+</blockquote>
+<pre class="highlight r tab-r"><code><span class="n">library</span><span class="p">(</span><span class="s2">"GeneNameGenieR"</span><span class="p">)</span><span class="w">
+</span></code></pre><pre class="highlight julia tab-julia"><code><span class="n">using</span> <span class="n">GeneNameGenieJ</span>
+</code></pre>
+<blockquote>
+<p>We encourage to use qualified function calls:</p>
+</blockquote>
+<pre class="highlight r tab-r"><code><span class="n">GeneNameGenieR</span><span class="o">::</span><span class="k">function</span><span class="w">
+</span></code></pre><pre class="highlight julia tab-julia"><code><span class="n">GeneNameGenieJ</span><span class="o">.</span><span class="k">function</span><span class="nf">
+</span></code></pre>
+<blockquote>
+<p>Web browser URL:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>http://localhost:7474/browser/
+</code></pre>
+<p>In the case of the web browser console there are no further steps required to
+be able to use the Java stored procedures from GeneNameGenie.</p>
+
+<p>For R and Julia, please load the package with the language specific commands.</p>
+
+<p>If you have a local GeneNameGenie-Neo4j GDB running, you&#39;re all set up and can
+skip the next part. In the case you want to use a different host address, 
+please check out the next paragraph.</p>
+
+<aside class="notice">
+Please ensure you have a running _GeneNameGenie_ Neo4j instance.
+</aside>
+<h1 id='establish-connection'>Establish connection</h1>
+<blockquote>
+<p><strong>To use custom connection settings you can use the following code:</strong><br>
+The following code, for example, sets the URL to: <code>http://address:7474/db/data/</code></p>
+</blockquote>
+<pre class="highlight r tab-r"><code><span class="n">GeneNameGenieR</span><span class="o">::</span><span class="n">setNeo4jConnection</span><span class="p">(</span><span class="n">host</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"http://address"</span><span class="p">)</span><span class="w">
+</span></code></pre><pre class="highlight julia tab-julia"><code><span class="n">GeneNameGenieJ</span><span class="o">.</span><span class="n">setNeo4jConnection</span><span class="x">(</span><span class="n">host</span> <span class="o">=</span> <span class="s">"http://address"</span><span class="x">)</span>
+</code></pre>
+<p>By default, the address is set to <code>host = localhost</code>, <code>port = 7474</code> and
+<code>path = db/data/</code>.</p>
+
+<p>Following parameters can be set:</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>host</td>
+<td>localhost</td>
+<td>Host address of the DB server.</td>
+</tr>
+<tr>
+<td>port</td>
+<td>7474</td>
+<td>Port on which the DBs service is exposed.</td>
+</tr>
+<tr>
+<td>path</td>
+<td>/db/data/</td>
+<td>Location of the DB files.</td>
+</tr>
+</tbody></table>
+<h1 id='molecular-id-handling'>Molecular-ID handling</h1><h2 id='get-current-official-gene-symbol-getofficialgenesymbol'>Get current official gene symbol - <code>getOfficialGeneSymbol</code></h2>
+<blockquote>
+<p>The following code translates the molecular IDs &quot;AMPK&quot;, &quot;ENST00000589955&quot;, &quot;A0A024R2B3&quot; and &quot;596&quot;
+to their respective official gene symbol:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>CALL rcsi.convert.table.getOfficialGeneSymbol<span class="o">([</span><span class="s1">'AMPK'</span>, <span class="s1">'ENST00000589955'</span>, <span class="s1">'A0A024R2B3'</span>, <span class="s1">'596'</span><span class="o">])</span>
+
+// Alternatively the <span class="sb">`</span>value<span class="sb">`</span> variable from the JSON object can be extracted and values 
+reformatted, which results <span class="k">in </span>a tabular output format <span class="o">(</span>below only the JSON <span class="k">return </span>value is shown<span class="o">)</span>:
+CALL rcsi.convert.table.getOfficialGeneSymbol<span class="o">([</span><span class="s1">'AMPK'</span>, <span class="s1">'ENST00000589955'</span>, <span class="s1">'A0A024R2B3'</span>, <span class="s1">'596'</span><span class="o">])</span> YIELD value
+RETURN
+    value.InputId AS InputId,
+    value.InputSourceDb AS InputSourceDb,
+   value.TargetId AS TargetId,
+   value.TargetDb AS TargetDb
+</code></pre><pre class="highlight r tab-r"><code><span class="o">&gt;</span><span class="w"> </span><span class="n">ids</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s1">'AMPK'</span><span class="p">,</span><span class="w"> </span><span class="s1">'ENST00000589955'</span><span class="p">,</span><span class="w"> </span><span class="s1">'A0A024R2B3'</span><span class="p">,</span><span class="w"> </span><span class="s1">'596'</span><span class="p">)</span><span class="w">
+</span><span class="o">&gt;</span><span class="w"> </span><span class="n">GeneNameGenieR</span><span class="o">::</span><span class="n">getOfficialGeneSymbol</span><span class="p">(</span><span class="n">ids</span><span class="p">)</span><span class="w">
+</span></code></pre><pre class="highlight julia tab-julia"><code><span class="c"># Implemented methods</span>
+<span class="n">getOfficialGeneSymbol</span><span class="x">(</span><span class="n">queryId</span><span class="o">::</span><span class="kt">String</span><span class="x">;</span> <span class="n">sourceDb</span><span class="o">::</span><span class="kt">String</span><span class="x">,</span> <span class="n">chromosomal</span><span class="o">::</span><span class="kt">Bool</span><span class="o">=</span><span class="n">true</span><span class="x">)</span>
+<span class="n">getOfficialGeneSymbol</span><span class="x">(</span><span class="n">queryId</span><span class="o">::</span><span class="n">Vector</span><span class="x">{</span><span class="kt">String</span><span class="x">};</span> <span class="n">sourceDb</span><span class="o">::</span><span class="kt">String</span><span class="x">,</span> <span class="n">chromosomal</span><span class="o">::</span><span class="kt">Bool</span><span class="o">=</span><span class="n">true</span><span class="x">)</span>
+
+
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">ids</span> <span class="o">=</span> <span class="kt">String</span><span class="x">[</span><span class="s">"AMPK"</span><span class="x">,</span> <span class="s">"ENST00000589955"</span><span class="x">,</span> <span class="s">"A0A024R2B3"</span><span class="x">,</span> <span class="s">"596"</span><span class="x">]</span>
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">GeneNameGenieJ</span><span class="o">.</span><span class="n">getOfficialGeneSymbol</span><span class="x">(</span><span class="n">ids</span><span class="x">)</span>
+</code></pre>
+<blockquote>
+<p>The above code outputs:</p>
+</blockquote>
+
+<pre class="highlight text tab-r">
+<code># The output is a data.frame object. Thereby, if warnings appear on the console,
+affected rows are printed at the top of the results.
+# A tibble: 2 x 2
+  InputId      nEl
+   chr         int
+1 596            2
+2 A0A024R2B3     2
+          InputId            InputSourceDb OfficialGeneSymbol
+1            AMPK        Gene Symbol Alias             PRKAA2
+2 ENST00000589955 Ensembl Human Transcript               BCL2
+3      A0A024R2B3      UniProtKB Gene Name               BCL2
+4      A0A024R2B3         UniProtKB/TrEMBL               BCL2
+5             596                 WikiGene               BCL2
+6             596                NCBI gene               BCL2
+Warning message:
+In .postCheckInput(x, queryId) :
+  Some input identifier(s) match to more than one input source database</code>
+</pre>
+
+<pre class="highlight text tab-julia">
+<code>WARNING: Some input IDs have multiple mappings
+6×3 DataFrames.DataFrame
+│ Row │ InputId         │ InputSourceDb            │ OfficialGeneSymbol │
+├─────┼─────────────────┼──────────────────────────┼────────────────────┤
+│ 1   │ AMPK            │ Gene Symbol Alias        │ PRKAA2             │
+│ 2   │ ENST00000589955 │ Ensembl Human Transcript │ BCL2               │
+│ 3   │ A0A024R2B3      │ UniProtKB Gene Name      │ BCL2               │
+│ 4   │ A0A024R2B3      │ UniProtKB/TrEMBL         │ BCL2               │
+│ 5   │ 596             │ WikiGene                 │ BCL2               │
+│ 6   │ 596             │ NCBI gene                │ BCL2               │</code>
+</pre>
+
+<pre class="highlight json tab-shell">
+<code>[
+   {
+      "InputId": "AMPK",
+      "OfficialGeneSymbol": "PRKAA2",
+      "InputSourceDb": "Gene Symbol Alias"
+   },
+   {
+      "InputId": "ENST00000589955",
+      "OfficialGeneSymbol": "BCL2",
+      "InputSourceDb": "Ensembl Human Transcript"
+   },
+   {
+      "InputId": "A0A024R2B3",
+      "OfficialGeneSymbol": "BCL2",
+      "InputSourceDb": "UniProtKB Gene Name"
+   },
+   {
+      "InputId": "A0A024R2B3",
+      "OfficialGeneSymbol": "BCL2",
+      "InputSourceDb": "UniProtKB/TrEMBL"
+   },
+   {
+      "InputId": "596",
+      "OfficialGeneSymbol": "BCL2",
+      "InputSourceDb": "WikiGene"
+   },
+   {
+      "InputId": "596",
+      "OfficialGeneSymbol": "BCL2",
+      "InputSourceDb": "NCBI gene"
+   }
+]</code>
+</pre>
+
+<p>The <code>getOfficialGeneSymbol</code> function can be used to retrieve the official gene symbol
+for any given molecular identifier without having to provide the input ID type.</p>
+<h3 id='function-parameters'>Function parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>queryIds</td>
+<td>-</td>
+<td>true</td>
+<td>Molecular input IDs. For R and Julia it can either be a single String or a String vector. For the stored procedure input it needs to be a String array.</td>
+</tr>
+<tr>
+<td>sourceDb</td>
+<td>-</td>
+<td>false</td>
+<td>DB name of the input IDs.</td>
+</tr>
+<tr>
+<td>chromosomal</td>
+<td>true</td>
+<td>false</td>
+<td>If <code>true</code>, only features located on one of the 23 chromosomes ({1,2,...,X,Y}) are considered. If <code>false</code>, features located on human alternative sequences will also be considered. Alternative sequences are sequences regions which differ from the genomic DNA on the primary assembly, such as HSCHR17_2_CTG4. For further information on alternative chormosomes please see <a href="http://www.ensembl.info/2011/05/20/accessing-non-reference-sequences-in-human/" target="_blank">Ensembl blog</a>.</td>
+</tr>
+</tbody></table>
+<h2 id='convert-any-molecular-input-id-to-47-different-types'>Convert any molecular input ID to 47 different types</h2>
+<blockquote>
+<p>The following code retrieves the <code>&quot;Uniprot/SWISSPROT&quot;</code>, <code>&quot;Uniprot/SPTREMBL&quot;</code> and
+<code>&quot;EntrezGene&quot;</code> IDs for the molecular input ID <code>&quot;AMPK&quot;</code>:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>// The section from <span class="sb">`</span>YIELD value ...<span class="sb">`</span> on is only due to formatting reasons
+CALL rcsi.convert.table.convertIds<span class="o">([</span><span class="s2">"AMPK"</span><span class="o">]</span>, <span class="o">[</span><span class="s2">"GeneSymbolDB"</span>, <span class="s2">"GeneAliasDB"</span>, <span class="s2">"RefSeq_mRNA"</span><span class="o">])</span>
+YIELD value
+RETURN
+    value.InputId AS InputId,
+   value.InputSourceDb AS InputSourceDb,
+   value.TargetDb AS TargetDb,
+   value.TargetId AS TargetId
+</code></pre><pre class="highlight r tab-r"><code><span class="c1"># 1) With parameter `longFormat = true` (default)
+</span><span class="o">&gt;</span><span class="w"> </span><span class="n">GeneNameGenieR</span><span class="o">::</span><span class="n">convertFromTo</span><span class="p">(</span><span class="s2">"AMPK"</span><span class="p">,</span><span class="w"> </span><span class="n">targetDb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s2">"GeneSymbolDB"</span><span class="p">,</span><span class="w"> </span><span class="s2">"GeneAliasDB"</span><span class="p">,</span><span class="w"> </span><span class="s2">"RefSeq_mRNA"</span><span class="p">))</span><span class="w">
+</span><span class="c1"># 2) With parameter `longFormat = false`
+</span><span class="o">&gt;</span><span class="w"> </span><span class="n">GeneNameGenieR</span><span class="o">::</span><span class="n">convertFromTo</span><span class="p">(</span><span class="w">
+      </span><span class="s2">"AMPK"</span><span class="p">,</span><span class="w">
+      </span><span class="n">targetDb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s2">"GeneSymbolDB"</span><span class="p">,</span><span class="w"> </span><span class="s2">"GeneAliasDB"</span><span class="p">,</span><span class="w"> </span><span class="s2">"RefSeq_mRNA"</span><span class="p">),</span><span class="w">
+      </span><span class="n">longFormat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)</span><span class="w">
+</span></code></pre><pre class="highlight julia tab-julia"><code><span class="c"># Implemented methods</span>
+<span class="n">convertFromToExtended</span><span class="x">(</span><span class="n">queryId</span><span class="o">::</span><span class="kt">String</span><span class="x">;</span> <span class="n">targetDb</span><span class="o">::</span><span class="n">Union</span><span class="x">{</span><span class="kt">String</span><span class="x">,</span> <span class="n">Vector</span><span class="x">{</span><span class="kt">String</span><span class="x">}}</span> <span class="n">attributesUnion</span><span class="x">{</span><span class="kt">String</span><span class="x">,</span> <span class="n">Vector</span><span class="x">{</span><span class="kt">String</span><span class="x">}},</span> <span class="n">sourceDb</span><span class="o">::</span><span class="kt">String</span><span class="x">,</span> <span class="n">longFormat</span><span class="o">::</span><span class="kt">Bool</span><span class="x">,</span> <span class="n">chromosomal</span><span class="o">::</span><span class="kt">Bool</span><span class="x">)</span>
+<span class="n">convertFromToExtended</span><span class="x">(</span><span class="n">queryId</span><span class="o">::</span><span class="n">Vector</span><span class="x">{</span><span class="kt">String</span><span class="x">};</span> <span class="n">targetDb</span><span class="o">::</span><span class="n">Union</span><span class="x">{</span><span class="kt">String</span><span class="x">,</span> <span class="n">Vector</span><span class="x">{</span><span class="kt">String</span><span class="x">}},</span> <span class="n">attributesUnion</span><span class="x">{</span><span class="kt">String</span><span class="x">,</span> <span class="n">Vector</span><span class="x">{</span><span class="kt">String</span><span class="x">}},</span> <span class="n">sourceDb</span><span class="o">::</span><span class="kt">String</span><span class="x">,</span> <span class="n">longFormat</span><span class="o">::</span><span class="kt">Bool</span><span class="x">,</span> <span class="n">chromosomal</span><span class="o">::</span><span class="kt">Bool</span><span class="x">)</span>
+
+
+<span class="c"># 1) With parameter `longFormat = true` (default)</span>
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">GeneNameGenieJ</span><span class="o">.</span><span class="n">convertFromTo</span><span class="x">(</span><span class="s">"AMPK"</span><span class="x">,</span> <span class="n">targetDb</span> <span class="o">=</span> <span class="x">[</span><span class="s">"GeneSymbolDB"</span><span class="x">,</span> <span class="s">"GeneAliasDB"</span><span class="x">,</span> <span class="s">"RefSeq_mRNA"</span><span class="x">])</span>
+
+<span class="c"># 2) With parameter `longFormat = false`</span>
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">GeneNameGenieJ</span><span class="o">.</span><span class="n">convertFromTo</span><span class="x">(</span>
+         <span class="s">"AMPK"</span><span class="x">,</span>
+         <span class="n">targetDb</span> <span class="o">=</span> <span class="x">[</span><span class="s">"GeneSymbolDB"</span><span class="x">,</span> <span class="s">"GeneAliasDB"</span><span class="x">,</span> <span class="s">"RefSeq_mRNA"</span><span class="x">],</span>
+         <span class="n">longFormat</span> <span class="o">=</span> <span class="n">false</span><span class="x">)</span>
+</code></pre>
+<blockquote>
+<p>The above code outputs:</p>
+</blockquote>
+
+<pre class="highlight text tab-r">
+<code># 1) Output for `longFormat = true`:
+  InputId     InputSourceDb             TargetDb  TargetId
+1    AMPK Gene Symbol Alias          RefSeq mRNA NM_006252
+2    AMPK Gene Symbol Alias    Gene Symbol Alias    AMPKa2
+3    AMPK Gene Symbol Alias    Gene Symbol Alias     PRKAA
+4    AMPK Gene Symbol Alias    Gene Symbol Alias      AMPK
+5    AMPK Gene Symbol Alias Official Gene Symbol    PRKAA2
+
+# 2) Output for `longFormat = false`, hence, wide table format:
+  InputId     InputSourceDb RefSeq.mRNA Gene.Symbol.Alias Official.Gene.Symbol
+1    AMPK Gene Symbol Alias   NM_006252 AMPKa2,PRKAA,AMPK               PRKAA2</code>
+</pre>
+
+<pre class="highlight text tab-julia">
+<code># 1) Output for `longFormat = true`:
+5×4 DataFrames.DataFrame
+│ Row │ InputId │ InputSourceDb     │ TargetDb             │ TargetId  │
+├─────┼─────────┼───────────────────┼──────────────────────┼───────────┤
+│ 1   │ AMPK    │ Gene Symbol Alias │ RefSeq mRNA          │ NM_006252 │
+│ 2   │ AMPK    │ Gene Symbol Alias │ Gene Symbol Alias    │ AMPKa2    │
+│ 3   │ AMPK    │ Gene Symbol Alias │ Gene Symbol Alias    │ PRKAA     │
+│ 4   │ AMPK    │ Gene Symbol Alias │ Gene Symbol Alias    │ AMPK      │
+│ 5   │ AMPK    │ Gene Symbol Alias │ Official Gene Symbol │ PRKAA2    │
+
+# 2) Output for `longFormat = false`, hence, wide table format:
+1×5 DataFrames.DataFrame
+│ Row │ InputId │ InputSourceDb     │ RefSeq_mRNA │ Gene_Symbol_Alias │ Official_Gene_Symbol │
+├─────┼─────────┼───────────────────┼─────────────┼───────────────────┼──────────────────────┤
+│ 1   │ AMPK    │ Gene Symbol Alias │ NM_006252   │ AMPKa2,PRKAA,AMPK │ PRKAA2               │</code>
+</pre>
+
+<pre class="highlight text tab-shell">
+<code>InputId       InputSourceDb               TargetDb     TargetId
+ "AMPK" "Gene Symbol Alias"          "RefSeq mRNA"  "NM_006252"
+ "AMPK" "Gene Symbol Alias"    "Gene Symbol Alias"     "AMPKa2"
+ "AMPK" "Gene Symbol Alias"    "Gene Symbol Alias"      "PRKAA"
+ "AMPK" "Gene Symbol Alias"    "Gene Symbol Alias"       "AMPK"
+ "AMPK" "Gene Symbol Alias" "Official Gene Symbol"     "PRKAA2"</code>
+</pre>
+
+<p>With the <code>convertFromTo</code> (Julia and R)/ <code>convertIds</code> (Cypher) function we can
+convert any given identifier to any supported target database. Supported DBs can
+be retrieved using the
+<a href="#getvaliddatabases-list-all-supported-dbs"><code>getValidDatabases</code></a> function.</p>
+<h3 id='function-parameters-2'>Function parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>queryIds</td>
+<td>-</td>
+<td>true</td>
+<td>Molecular input IDs. For R and Julia it can either be a single String or a String vector. For the stored procedure input it needs to be a String array.</td>
+</tr>
+<tr>
+<td>targetDb</td>
+<td>&quot;GeneSymbolDB&quot;</td>
+<td>false</td>
+<td>Target DB ID(s) (for valid DB IDs please see <a href="#getvaliddatabases-list-all-supported-dbs">getValidDatabases</a>)</td>
+</tr>
+<tr>
+<td>sourceDb</td>
+<td>-</td>
+<td>false</td>
+<td>DB name of the input IDs.</td>
+</tr>
+<tr>
+<td>chromosomal</td>
+<td>true</td>
+<td>false</td>
+<td>If <code>true</code>, only features located on one of the 23 chromosomes ({1,2,...,X,Y}) are considered. If <code>false</code>, features located on human alternative sequences will also be considered. Alternative sequences are sequences regions which differ from the genomic DNA on the primary assembly, such as HSCHR17_2_CTG4. For further information on alternative chormosomes please see <a href="http://www.ensembl.info/2011/05/20/accessing-non-reference-sequences-in-human/" target="_blank">Ensembl blog</a>.</td>
+</tr>
+</tbody></table>
+<h1 id='mirna-id-handling'>miRNA ID handling</h1><h2 id='translate-mirna-input-ids-to-current-version-and-retrieve-metadata'>Translate miRNA input Ids to current version and retrieve metadata</h2>
+<blockquote>
+<p>Following parameter interfaces are implemented:</p>
+</blockquote>
+<pre class="highlight julia tab-julia"><code><span class="c"># Implemented methods</span>
+<span class="n">convertToCurrentMirbaseVersion</span><span class="x">(</span><span class="n">queryId</span><span class="o">::</span><span class="kt">String</span><span class="x">;</span> <span class="n">species</span><span class="o">::</span><span class="kt">String</span><span class="x">,</span> <span class="n">metadata</span><span class="o">::</span><span class="n">Union</span><span class="x">{</span><span class="kt">String</span><span class="x">,</span> <span class="n">Vector</span><span class="x">{</span><span class="kt">String</span><span class="x">}})</span>
+<span class="n">convertToCurrentMirbaseVersion</span><span class="x">(</span><span class="n">queryId</span><span class="o">::</span><span class="n">Vector</span><span class="x">{</span><span class="kt">String</span><span class="x">};</span> <span class="n">species</span><span class="o">::</span><span class="kt">String</span><span class="x">,</span> <span class="n">metadata</span><span class="o">::</span><span class="n">Union</span><span class="x">{</span><span class="kt">String</span><span class="x">,</span> <span class="n">Vector</span><span class="x">{</span><span class="kt">String</span><span class="x">}})</span>
+</code></pre>
+<blockquote>
+<p><strong>Example 1:</strong> The following code translates the mature miRNA ID hsa-miR-29a to its
+current name in miRBase version 22:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>CALL rcsi.mirna.convertToCurrentMirbaseVersion<span class="o">([</span><span class="s2">"hsa-miR-29a"</span><span class="o">])</span>
+YIELD value
+RETURN
+    value.InputId AS InputId,
+   value.Accession AS Accession,
+   value.CurrentMirna AS CurrentMirna,
+   value.CurrentVersion AS CurrentVersion
+</code></pre><pre class="highlight r tab-r"><code><span class="o">&gt;</span><span class="w"> </span><span class="n">GeneNameGenieR</span><span class="o">::</span><span class="n">convertToCurrentMirbaseVersion</span><span class="p">(</span><span class="s2">"hsa-miR-29a"</span><span class="p">)</span><span class="w">
+</span></code></pre><pre class="highlight julia tab-julia"><code><span class="n">julia</span><span class="o">&gt;</span> <span class="n">GeneNameGenieJ</span><span class="o">.</span><span class="n">convertToCurrentMirbaseVersion</span><span class="x">(</span><span class="s">"hsa-miR-29a"</span><span class="x">)</span>
+</code></pre>
+<blockquote>
+<p><strong>Output for example 1:</strong></p>
+</blockquote>
+
+<pre class="highlight text tab-shell">
+<code>InputId   Accession   CurrentMirna    CurrentVersion
+"hsa-miR-29a"   "MIMAT0000086"  "hsa-miR-29a-3p"    22.0</code>
+</pre>
+
+<pre class="highlight text tab-r">
+<code>      InputId    Accession   CurrentMirna CurrentVersion
+1 hsa-miR-29a MIMAT0000086 hsa-miR-29a-3p             22</code>
+</pre>
+
+<pre class="highlight text tab-julia">
+<code>1×4 DataFrames.DataFrame
+│ Row │ InputId     │ Accession    │ CurrentMirna   │ CurrentVersion │
+├─────┼─────────────┼──────────────┼────────────────┼────────────────┤
+│ 1   │ hsa-miR-29a │ MIMAT0000086 │ hsa-miR-29a-3p │ 22.0           │</code>
+</pre>
+
+<blockquote>
+<p><strong>Example 2:</strong> In this case we translate the mature miRNA ID hsa-miR-29a to its
+current name in the miRBase version 22:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>CALL rcsi.mirna.convertToCurrentMirbaseVersion<span class="o">(</span>
+      <span class="o">[</span><span class="s2">"hsa-miR-29a"</span>, <span class="s2">"MI0000474"</span><span class="o">]</span>,
+      <span class="s2">""</span>,     // neglect species parameter <span class="o">(</span>stored procedures <span class="k">do </span>not support named arguments<span class="o">)</span>
+      <span class="o">[</span><span class="s2">"sequence"</span>, <span class="s2">"chromosome"</span><span class="o">])</span>
+YIELD value
+RETURN
+    value.InputId AS InputId,
+   value.Accession AS Accession,
+   value.CurrentMirna AS CurrentMirna,
+   value.CurrentVersion AS CurrentVersion,
+   value.Sequence AS Sequence,
+   value.Chromosome AS Chromosome
+</code></pre><pre class="highlight r tab-r"><code><span class="o">&gt;</span><span class="w"> </span><span class="n">GeneNameGenieR</span><span class="o">::</span><span class="n">convertToCurrentMirbaseVersion</span><span class="p">(</span><span class="w">
+     </span><span class="nf">c</span><span class="p">(</span><span class="s2">"hsa-miR-29a"</span><span class="p">,</span><span class="w"> </span><span class="s2">"MI0000474"</span><span class="p">),</span><span class="w">
+     </span><span class="n">metadata</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s2">"sequence"</span><span class="p">,</span><span class="w"> </span><span class="s2">"chromosome"</span><span class="p">))</span><span class="w">
+</span></code></pre><pre class="highlight julia tab-julia"><code><span class="n">julia</span><span class="o">&gt;</span> <span class="n">GeneNameGenieJ</span><span class="o">.</span><span class="n">convertToCurrentMirbaseVersion</span><span class="x">(</span>
+            <span class="x">[</span><span class="s">"hsa-miR-29a"</span><span class="x">,</span> <span class="s">"MI0000474"</span><span class="x">],</span>
+            <span class="n">metadata</span> <span class="o">=</span> <span class="x">[</span><span class="s">"sequence"</span><span class="x">,</span> <span class="s">"chromosome"</span><span class="x">])</span>
+</code></pre>
+<blockquote>
+<p><strong>Output for example 2:</strong></p>
+</blockquote>
+
+<pre class="highlight text tab-shell">
+<code>InputId   Accession   CurrentMirna    CurrentVersion  Sequence    Chromosome
+"MI0000474" "MI0000474" "hsa-mir-134"   22.0    "CAGGGUGU ... CCAACCCUC"    "14"
+"hsa-miR-29a"   "MIMAT0000086"  "hsa-miR-29a-3p"    22.0    "UAGCACCAUCUGAAAUCGGUUA"    null</code>
+</pre>
+
+<pre class="highlight text tab-r">
+<code>      InputId    Accession   CurrentMirna CurrentVersion               Sequence Chromosome
+1   MI0000474    MI0000474    hsa-mir-134             22 CAGGGUGU ... CCAACCCUC         14
+2 hsa-miR-29a MIMAT0000086 hsa-miR-29a-3p             22 UAGCACCAUCUGAAAUCGGUUA         NA</code>
+</pre>
+
+<pre class="highlight text tab-julia">
+<code>2×6 DataFrames.DataFrame
+│ Row │ InputId     │ Accession    │ CurrentMirna   │ CurrentVersion │ Sequence                │ Chromosome │
+├─────┼─────────────┼──────────────┼────────────────┼────────────────┼─────────────────────────┼────────────┤
+│ 1   │ MI0000474   │ MI0000474    │ hsa-mir-134    │ 22.0           │ CAGGGUGU ... ACCAACCCUC │ 14         │
+│ 2   │ hsa-miR-29a │ MIMAT0000086 │ hsa-miR-29a-3p │ 22.0           │ UAGCACCAUCUGAAAUCGGUUA  │ missing    │</code>
+</pre>
+
+<p>The <code>convertToCurrentMirbaseVersion</code> function takes a single or multiple miRNA IDs
+and returns the current miRNA name for each input value respectively (where possible).</p>
+
+<p>Moreover, metadata for mature as well as precursor miRNAs, such as comments and reads,
+can be retrieved by passing the parameter value <code>metadata</code> to the function.
+The function accepts mature miRNA identifiers (miRNA name and MIMAT-accession) as well as
+precursor identifiers (pre-miRNA name and MI-accession). Hence, some metadata values
+only apply to precursor miRNAs, such as genomic location and strand.</p>
+<h3 id='function-parameters-3'>Function parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>queryIds</td>
+<td>-</td>
+<td>true</td>
+<td>Molecular input IDs. For R and Julia it can either be a single String or a String vector. For the stored procedure input it needs to be a String array.</td>
+</tr>
+<tr>
+<td>targetDb</td>
+<td>&quot;GeneSymbolDB&quot;</td>
+<td>false</td>
+<td>Target DB ID(s) (for valid DB IDs please see <a href="#getvaliddatabases-list-all-supported-dbs">getValidDatabases</a>)</td>
+</tr>
+<tr>
+<td>sourceDb</td>
+<td>-</td>
+<td>false</td>
+<td>DB name of the input IDs.</td>
+</tr>
+<tr>
+<td>chromosomal</td>
+<td>true</td>
+<td>false</td>
+<td>If <code>true</code>, only features located on one of the 23 chromosomes ({1,2,...,X,Y}) are considered. If <code>false</code>, features located on human alternative sequences will also be considered. Alternative sequences are sequences regions which differ from the genomic DNA on the primary assembly, such as HSCHR17_2_CTG4. For further information on alternative chormosomes please see <a href="http://www.ensembl.info/2011/05/20/accessing-non-reference-sequences-in-human/" target="_blank">Ensembl blog</a>.</td>
+</tr>
+</tbody></table>
+<h1 id='list-valid-databases-and-supported-parameter-values'>List valid databases and supported parameter values</h1><h2 id='getvaliddatabases-list-all-supported-dbs'><code>getValidDatabases</code>: List all supported DBs</h2>
+<blockquote>
+<p>The following code returns all supported DB types:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>CALL rcsi.params.getValidDatabases<span class="o">()</span>
+</code></pre><pre class="highlight r tab-r"><code><span class="n">GeneNameGenieR</span><span class="o">::</span><span class="n">getValidDatabases</span><span class="p">()</span><span class="w">
+</span></code></pre><pre class="highlight julia tab-julia"><code><span class="n">GeneNameGenieJ</span><span class="o">.</span><span class="n">getValidDatabases</span><span class="x">()</span>
+</code></pre><h2 id='getvalidmirnametadatavalues-list-all-valid-mirna-metadata-parameter-values'><code>getValidMirnaMetadataValues</code>: List all valid miRNA metadata parameter values</h2>
+<blockquote>
+<p>The following code returns all valid miRNA metadata parameter values:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>CALL rcsi.params.getValidMirnaMetadataValues<span class="o">()</span>
+</code></pre><pre class="highlight r tab-r"><code><span class="n">GeneNameGenieR</span><span class="o">::</span><span class="n">getValidMirnaMetadataValues</span><span class="p">()</span><span class="w">
+</span></code></pre><pre class="highlight julia tab-julia"><code><span class="n">GeneNameGenieJ</span><span class="o">.</span><span class="n">getValidMirnaMetadataValues</span><span class="x">()</span>
+</code></pre>
+<blockquote>
+<p>The above code outputs</p>
+</blockquote>
+<pre class="highlight plaintext"><code>             Parameter
+1           confidence
+2                 type
+3             sequence
+4             comments
+5          previousIds
+6                  url
+7           chromosome
+8          regionStart
+9            regionEnd
+10              strand
+11 communityAnnotation
+12        nExperiments
+13               reads
+14        evidenceType
+</code></pre>
+<p>The values returned by the <code>getValidMirnaMetadataValues</code> function are valid
+input parameters for the <code>metadata</code> value of the <code>convertToCurrentMirbaseVersion</code>
+function. All values were retrieved from the current miRBase release version 22.</p>
+<h1 id='errors'>Errors</h1>
+<aside class="notice">
+This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
+</aside>
+
+<p>The Kittn API uses the following error codes:</p>
+
+<table><thead>
+<tr>
+<th>Error Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>400</td>
+<td>Bad Request -- Your request is invalid.</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized -- Your API key is wrong.</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden -- The kitten requested is hidden for administrators only.</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not Found -- The specified kitten could not be found.</td>
+</tr>
+<tr>
+<td>405</td>
+<td>Method Not Allowed -- You tried to access a kitten with an invalid method.</td>
+</tr>
+<tr>
+<td>406</td>
+<td>Not Acceptable -- You requested a format that isn&#39;t json.</td>
+</tr>
+<tr>
+<td>410</td>
+<td>Gone -- The kitten requested has been removed from our servers.</td>
+</tr>
+<tr>
+<td>418</td>
+<td>I&#39;m a teapot.</td>
+</tr>
+<tr>
+<td>429</td>
+<td>Too Many Requests -- You&#39;re requesting too many kittens! Slow down!</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
+</tr>
+<tr>
+<td>503</td>
+<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="shell">Cypher</a>
+                <a href="#" data-language-name="r">R</a>
+                <a href="#" data-language-name="julia">Julia</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
