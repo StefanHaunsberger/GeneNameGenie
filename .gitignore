@@ -22,3 +22,14 @@ build/
 _yardoc
 doc/
 .idea/
+CHANGELOG.md
+CODE_OF_CONDUCT.md
+Gemfile
+Gemfile.lock
+LICENSE
+Vagrantfile
+config.rb
+deploy.sh
+font-selection.json
+lib/
+vendor/
